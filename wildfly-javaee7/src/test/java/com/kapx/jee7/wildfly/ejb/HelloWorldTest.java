@@ -2,6 +2,7 @@ package com.kapx.jee7.wildfly.ejb;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
 import java.util.concurrent.Future;
 
@@ -54,5 +55,6 @@ public class HelloWorldTest {
 
 		assertNotNull(future);
 		assertEquals(expected, future.get());
+		assertTrue(future.isDone());
 	}
 }

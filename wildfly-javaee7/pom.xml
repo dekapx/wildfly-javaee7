@@ -202,6 +202,8 @@
 		<profile>
 
 			<!-- Run with: mvn clean test -Parq-wildfly-managed -->
+			<!-- Specify the wildfly server location in arquillian.xml -->
+			<!-- It will start the server, deploy the application and run the arquillian tests... -->
 			<id>arq-wildfly-managed</id>
 			<dependencies>
 				<dependency>
