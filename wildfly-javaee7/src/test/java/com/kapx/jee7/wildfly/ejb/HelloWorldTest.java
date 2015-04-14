@@ -20,13 +20,16 @@ import org.junit.runner.RunWith;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.kapx.jee7.wildfly.util.TextMessageFormatter;
+
 @RunWith(Arquillian.class)
 public class HelloWorldTest {
 	private static final Logger logger = LoggerFactory.getLogger(HelloWorldTest.class);
 
 	@Deployment
 	public static Archive<?> createTestArchive() {
-		return ShrinkWrap.create(WebArchive.class, "test.war").addClasses(HelloWorldBean.class, HelloWorldLocal.class, HelloWorldRemote.class)
+		return ShrinkWrap.create(WebArchive.class, "test.war")
+				.addClasses(TextMessageFormatter.class, HelloWorldLocal.class, HelloWorldRemote.class, HelloWorldBean.class)
 				.addAsWebInfResource(EmptyAsset.INSTANCE, "beans.xml");
 	}
 
