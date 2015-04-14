@@ -5,11 +5,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.kapx.jee7.wildfly</groupId>
-	<artifactId>wildfly-javaee7</artifactId>
+	<artifactId>cdi-annotation-demo</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
-	<name>wildfly-javaee7</name>
-	<description>wildfly-javaee7</description>
+	<name>cdi-annotation-demo</name>
+	<description>cdi-annotation-demo</description>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
