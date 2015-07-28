@@ -3,6 +3,7 @@ package com.kapx.jee7.wildfly.servlet;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import javax.ejb.EJB;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -12,10 +13,15 @@ import javax.servlet.http.HttpServletResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.kapx.jee7.wildfly.ejb.FileWriterService;
+
 @SuppressWarnings("serial")
 @WebServlet(name = "ApplicationServlet", urlPatterns = "/ApplicationServlet")
 public class ApplicationServlet extends HttpServlet {
 	private static final Logger LOGGER = LoggerFactory.getLogger(ApplicationServlet.class);
+
+	@EJB
+	private FileWriterService fileWriterService;
 
 	@Override
 	public void init() throws ServletException {
@@ -28,6 +34,8 @@ public class ApplicationServlet extends HttpServlet {
 		out.close();
 
 		LOGGER.info("Application Servlet invoked...");
+
+		fileWriterService.writeToFile("dummy text...");
 	}
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

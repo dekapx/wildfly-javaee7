@@ -10,13 +10,8 @@ import java.lang.annotation.Target;
 
 import javax.inject.Qualifier;
 
-import com.kapx.jee7.wildfly.common.FileWriterTypes;
-
 @Qualifier
 @Retention(RUNTIME)
 @Target({ FIELD, TYPE, METHOD })
-public @interface FileWriter {
-
-	FileWriterTypes values();
-
+public @interface CsvWriter {
 }
