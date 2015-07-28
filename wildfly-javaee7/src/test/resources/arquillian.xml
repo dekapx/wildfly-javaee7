@@ -17,7 +17,7 @@
 	<!-- Example configuration for a remote WildFly instance -->
 	<container qualifier="jboss" default="true">
 		<configuration>
-			<property name="jbossHome">/Users/xkapil/softwares/wildfly-8.2.0.Final</property>
+			<property name="jbossHome">C:\Installer\wildfly-9.0.0.Final</property>
 		</configuration>
 	</container>
 
